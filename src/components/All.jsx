@@ -3,9 +3,11 @@ import { useState, useEffect } from "react";
 import WearsInfo from "./imageGrid";
 
 const useImageURL = ({urlLink ="https://fakestoreapi.com/products"}) => {
+
   const [allImage, setAllImage] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [clickedCards, setClickedCards] = useState([]);
 
   useEffect(() => {
     try{
@@ -36,6 +38,12 @@ const useImageURL = ({urlLink ="https://fakestoreapi.com/products"}) => {
         setLoading(false);
     }
   }, []);
+
+  const handleClick = (cardId) => {
+
+      setClickedCards([...clickedCards,cardId]);
+      /* setCounter(counter + 1); */
+  };
 
   return { allImage, error, loading };
 };

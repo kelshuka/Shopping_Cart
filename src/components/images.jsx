@@ -1,10 +1,16 @@
 
+import { IconShoppingCart } from '@tabler/icons-react';
+import './image.css'
+
 export default function WearsImg({cards}){
     return (
         <div className="wearsImg">
-            <img src={cards.url} alt={cards.title}  />
+            <img src={cards.url} alt={cards.title} className="wear-img" />
             <p>{cards.title}</p>
-            <p>{cards.price}</p>
+            <div className='priceCart'>
+                ${cards.price}
+                <button> <IconShoppingCart /> </button>
+            </div>
         </div>
     );
 }

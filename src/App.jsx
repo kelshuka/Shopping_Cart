@@ -1,38 +1,44 @@
-import { useState } from 'react'
+
 import { Link } from 'react-router-dom'
+import { Outlet, useParams } from 'react-router-dom'
 
-import All from './components/All'
+import './App.css'
+import { IconShoppingCart } from '@tabler/icons-react';
+import { IconSearch } from '@tabler/icons-react';
+import { Indicator } from '@mantine/core';
 
-import { useParams } from 'react-router-dom'
-import Women from './components/women.jsx'
-import Men from './components/men.jsx'
-import Electronics from './components/electronics.jsx'
-import Jewelery from './components/jewelery.jsx'
-
-//import './App.css'
 
 function App() {
     const {name} = useParams();
 
   return (
-    <>
+    <div className='container'>
       <header>
         <section className='searchbar'>
+          <div className='searchs'>
+            <label>
+                <input
+                    type="text"
+                    id='search'
+                />
+                <IconSearch />
+            </label>
+          </div>
 
-        <div>
-          <section>login</section>
-          <section>signup</section>
-        </div>
+          <div className='logSign'>
+            <button> login </button>
+            <button> signup </button>
+          </div>
           
         </section>
         
         <section className='navigates'>
           <nav>
-            <button type='button'> <Link to="all"> All </Link> </button>
-            <button type='button'> <Link to="women"> Women </Link> </button>
-            <button type='button'> <Link to="men"> Men </Link> </button>
-            <button type='button'> <Link to="jewelery"> Jewelery </Link> </button>
-            <button type='button'> <Link to="electronics"> Electronics </Link> </button>
+            <button type='button'> <Link to="/all"> All </Link> </button>
+            <button type='button'> <Link to="/women"> Women </Link> </button>
+            <button type='button'> <Link to="/men"> Men </Link> </button>
+            <button type='button'> <Link to="/jewelery"> Jewelery </Link> </button>
+            <button type='button'> <Link to="/electronics"> Electronics </Link> </button>
           </nav>
         </section>
 
@@ -41,19 +47,8 @@ function App() {
       <main>
         
         <section className='items'>
-          {name === "women" ? (
-              <Women />
-          ): name === "men" ? (
-              <Men />
-          ): name === "jewelery" ? (
-              <Jewelery />
-          ): name === "electronics" ? (
-              <Electronics />
-          ): name === "all" ? (
-              <All />
-          ):(
-              <All />
-          )}
+          
+          < Outlet />
 
         </section>
 
@@ -61,8 +56,23 @@ function App() {
 
       <footer>
 
+        <div className='shop'>
+           Home
+        </div>
+
+        <div className='cartDetail'>
+          <div>
+            {/* <Indicator label={} size={} color=''>  </Indicator> */}
+            <Link to="/carts"> <IconShoppingCart /> </Link> 
+          </div>
+          <div>
+            Personal Details
+          </div>
+          
+        </div>
+
       </footer>
-    </>
+    </div>
   )
 }
 

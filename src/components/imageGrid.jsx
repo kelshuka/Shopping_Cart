@@ -1,6 +1,7 @@
 
 
 import WearsImg from "./images"
+import './image.css'
 
 export default function WearsInfo({allCards}){
 
