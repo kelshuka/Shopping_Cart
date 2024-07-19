@@ -1,16 +1,17 @@
 
+
 import { useState, useEffect } from "react";
 import WearsInfo from "./imageGrid";
 import Carts from "../carts";
 import CartsImg from './cartGrid';
 
-const All = ({allImage,setAllImage,clickedCards, setClickedCards, itemCount, setItemCount, urlLink ="https://fakestoreapi.com/products"}) => {
+const useImageURL = ({allImage,setAllImage,urlLink ="https://fakestoreapi.com/products"}) => {
 
   /* const [allImage, setAllImage] = useState([]); */
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-  /* const [clickedCards, setClickedCards] = useState([]); */
-  /* const [itemCount, setItemCount] = useState(0); */
+  const [clickedCards, setClickedCards] = useState([]);
+  const [itemCount, setItemCount] = useState(0);
 
   useEffect(() => {
     try{
@@ -48,17 +49,22 @@ const All = ({allImage,setAllImage,clickedCards, setClickedCards, itemCount, set
       setItemCount(itemCount + 1);
   };
 
+  return { allImage,clickedCards, handleClick, error, loading };
+};
+
+const All = ({allImage,setAllImage,urlLink}) => {
+  const { allImage,clickedCards,handleClick, error, loading } = useImageURL({allImage,setAllImage,urlLink});
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>A network error was encountered</p>;
 
   return (
     <>
       <WearsInfo allCards={allImage} onCardClick={handleClick}/>
-      {/* <Carts allCards={clickedCards} /> */}
+      <Carts allCards={clickedCards} />
       {/* <CartsImg cards={clickedCards} /> */}
     </>
   );
-
 };
 
 

@@ -1,8 +1,20 @@
 
-export default function Carts(){
+import CartsImg from "./components/cartGrid"
+
+export default function Carts({allCards,itemCount, addItem, subItem}){
+
     return (
         <>
-            <h1>Testing Out</h1>
+            <p> {itemCount} </p>
+            <div className="cardInfo">
+
+                {allCards.map( (card) => {
+                    return < CartsImg key={card.id} 
+                    cards={card} addItem={addItem} subItem={subItem} />
+                })}
+
+            </div>
         </>
     )
+    
 }

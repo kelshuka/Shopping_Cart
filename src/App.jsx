@@ -8,7 +8,7 @@ import { IconSearch } from '@tabler/icons-react';
 import { Indicator } from '@mantine/core';
 
 
-function App() {
+function App({itemCount}) {
     const {name} = useParams();
 
   return (
@@ -62,8 +62,8 @@ function App() {
 
         <div className='cartDetail'>
           <div>
-            {/* <Indicator label={} size={} color=''>  </Indicator> */}
-            <Link to="/carts"> <IconShoppingCart /> </Link> 
+            {/* <Indicator label={itemCount} size={} color='' >  </Indicator> */}
+            <Link to="/carts"> <IconShoppingCart /> </Link> {itemCount}
           </div>
           <div>
             Personal Details
