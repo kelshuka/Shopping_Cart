@@ -1,7 +1,28 @@
 
+import { useState } from "react";
 import './image.css'
 
-export default function CartsImg({cards,addItem, subItem}){
+export default function CartsImg({cards, itemCount, setItemCount ,totalPrice, setTotalPrice }){
+
+
+    const [itemQuantity, setItemQuantity] = useState(1);
+
+    const addItem = () => {
+        setItemCount(itemCount + 1);
+        setItemQuantity(itemQuantity + 1);
+
+        setTotalPrice(totalPrice + cards.price);
+        
+    }
+
+    const subItem = () => {
+        setItemCount(itemCount - 1);
+        setItemQuantity(itemQuantity - 1);
+
+        setTotalPrice(totalPrice - cards.price);
+    }
+
+
     return (
         <>
 
@@ -13,11 +34,11 @@ export default function CartsImg({cards,addItem, subItem}){
                 <div>
                     <p>{cards.title}</p>
                     <p>${cards.price}</p>
+                    <p>Quantity: {itemQuantity}</p>
                     <div>
                         <button onClick={subItem}> - </button>
                         <button onClick={addItem}> + </button>
                     </div>
-                    <p>Price: $ </p>
                 </div>
         
             </div>

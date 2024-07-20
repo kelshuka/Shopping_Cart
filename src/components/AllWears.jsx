@@ -1,5 +1,5 @@
 
-import All from './components/All.jsx'
+import All from './All.jsx'
 
 const AllWears = ({allImage,setAllImage,clickedCards, setClickedCards,itemCount, setItemCount}) =>{
     return (

@@ -1,16 +1,12 @@
 
 import { useState, useEffect } from "react";
 import WearsInfo from "./imageGrid";
-import Carts from "../carts";
-import CartsImg from './cartGrid';
+
 
 const All = ({allImage,setAllImage,clickedCards, setClickedCards, itemCount, setItemCount, urlLink ="https://fakestoreapi.com/products"}) => {
 
-  /* const [allImage, setAllImage] = useState([]); */
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-  /* const [clickedCards, setClickedCards] = useState([]); */
-  /* const [itemCount, setItemCount] = useState(0); */
 
   useEffect(() => {
     try{
@@ -42,10 +38,13 @@ const All = ({allImage,setAllImage,clickedCards, setClickedCards, itemCount, set
     }
   }, []);
 
+ 
+
   const handleClick = (card) => {
 
       setClickedCards([...clickedCards,card]);
       setItemCount(itemCount + 1);
+    
   };
 
   if (loading) return <p>Loading...</p>;
@@ -54,8 +53,7 @@ const All = ({allImage,setAllImage,clickedCards, setClickedCards, itemCount, set
   return (
     <>
       <WearsInfo allCards={allImage} onCardClick={handleClick}/>
-      {/* <Carts allCards={clickedCards} /> */}
-      {/* <CartsImg cards={clickedCards} /> */}
+      
     </>
   );
 

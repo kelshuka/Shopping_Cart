@@ -5,8 +5,8 @@ import Women from './components/women.jsx'
 import Men from './components/men.jsx'
 import Electronics from './components/electronics.jsx'
 import Jewelery from './components/jewelery.jsx'
-import AllWears from './AllWears.jsx'
-import Carts from './carts.jsx'
+import AllWears from './components/AllWears.jsx'
+import Carts from './components/carts.jsx'
 import CartsImg from './components/cartGrid.jsx'
 
 
