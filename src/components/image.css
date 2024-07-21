@@ -11,17 +11,29 @@
     justify-content: space-between;
     border: 1px solid #ddd;
     padding: 20px;
+    margin-left: 20px;
     border-radius: 8px;
     background-color: #f9f9f9;
     width: 200px;
     text-align: center;
 }
+.wearsImg:hover {
+    transform: scale(1.005);
+    box-shadow: 
+        0 0 0 2px white,
+        0.3em 0.3em 1em rgb(137, 179, 216);
+}
+
 
 .wear-img{
     padding:10px;
     width: 200px;
     height: 200px;
     border-radius: 8px;
+}
+.cartAddIcon:hover{
+    cursor: pointer;
+    background-color: rgb(139, 218, 218);
 }
 
 .priceCart{
@@ -53,3 +65,24 @@
     flex-wrap: wrap;
     gap: 10px;
 }
+.totalPrice{
+    width: 300px;
+    height: 150px;
+    margin-left: auto;/*  pushes it to extreme right */
+    margin-right: auto;/*  pushes it to extreme left, so together put div in middle */
+    border: 2px solid #e64040;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.totalPrice button{
+    background: #0098ef;
+    border: 1px solid royalblue;
+    color: white;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 3vh;
+  }
+  

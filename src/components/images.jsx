@@ -11,7 +11,7 @@ export default function WearsImg({cards, onClicks}){
             <p>{cards.title}</p>
             <div className='priceCart'>
                 ${cards.price}
-                <button onClick={onClicks}> 
+                <button onClick={onClicks} className='cartAddIcon'> 
                 <IconShoppingCart /> 
                 </button>
             </div>

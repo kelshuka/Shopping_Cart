@@ -8,18 +8,26 @@ export default function CartsImg({cards, itemCount, setItemCount ,totalPrice, se
     const [itemQuantity, setItemQuantity] = useState(1);
 
     const addItem = () => {
-        setItemCount(itemCount + 1);
-        setItemQuantity(itemQuantity + 1);
+        if(itemQuantity >= 0){
+            setItemCount(itemCount + 1);
+            setItemQuantity(itemQuantity + 1);
 
-        setTotalPrice(totalPrice + cards.price);
+            setTotalPrice(totalPrice + cards.price);
+        } else{
+            setItemQuantity(0);
+        }
         
     }
 
     const subItem = () => {
-        setItemCount(itemCount - 1);
-        setItemQuantity(itemQuantity - 1);
-
-        setTotalPrice(totalPrice - cards.price);
+        if(itemQuantity > 0) {
+            setItemCount(itemCount - 1);
+            setItemQuantity(itemQuantity - 1);
+    
+            setTotalPrice(totalPrice - cards.price);
+        } else{
+            setItemQuantity(0);
+        }    
     }
 
 

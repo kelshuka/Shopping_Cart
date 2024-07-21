@@ -12,6 +12,8 @@ import Jewelery from './components/jewelery.jsx'
 import AllWears from './components/AllWears.jsx'
 import Carts from './components/carts.jsx'
 
+import HomePage from './HomePage.jsx'
+
 
 
 
@@ -51,6 +53,10 @@ const AppRouter = () => {
             allCards={clickedCards} itemCount={itemCount} setItemCount={setItemCount} 
             totalPrice={totalPrice} setTotalPrice={setTotalPrice}  />},
       ],
+  },
+  {
+      path: "homepage",
+      element: <HomePage />,
   },
   
 ];

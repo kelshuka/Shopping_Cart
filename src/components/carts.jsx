@@ -15,8 +15,12 @@ export default function Carts({allCards,itemCount,setItemCount , totalPrice , se
 
     return (
         <>
-            <p> {itemCount} </p>
-            <p>$ {totalPrice.toFixed(2)}</p>
+            <div className="totalPrice">
+                <p> Total Quantity: {itemCount} </p>
+                <p> Total Price: $ {totalPrice.toFixed(2)}</p>
+                <button> Purchase </button>
+            </div>
+            
             <div className="cardInfo">
 
                 {allCards.map( (card) => {

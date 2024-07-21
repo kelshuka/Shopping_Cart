@@ -5,7 +5,7 @@ import { Outlet, useParams } from 'react-router-dom'
 import './App.css'
 import { IconShoppingCart } from '@tabler/icons-react';
 import { IconSearch } from '@tabler/icons-react';
-import { Indicator } from '@mantine/core';
+
 
 
 function App({itemCount}) {
@@ -57,18 +57,12 @@ function App({itemCount}) {
       <footer>
 
         <div className='shop'>
-           Home
+        <button> <Link to="/homepage">  Home  </Link>  </button> 
         </div>
 
-        <div className='cartDetail'>
-          <div>
-            {/* <Indicator label={itemCount} size={} color='' >  </Indicator> */}
-            <Link to="/carts"> <IconShoppingCart /> </Link> {itemCount}
-          </div>
-          <div>
-            Personal Details
-          </div>
-          
+        <div className='cartDetail'>         
+          <Link to="/carts"> <IconShoppingCart size={48} color='blue' /> </Link> {itemCount}
+                  
         </div>
 
       </footer>
